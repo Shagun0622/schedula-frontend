@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #06b6d4;
+  --primary-light: #22d3ee;
+  --primary-dark: #0891b2;
+  --bg: #f0fafb;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animated gradient bg for auth pages */
+.auth-bg {
+  background: radial-gradient(ellipse at top left, #e0f2fe 0%, #f0fafb 40%, #ecfeff 100%);
+  min-height: 100vh;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-2xl shadow-card border border-slate-100;
+}
+
+/* Fade in animation utilities */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #06b6d4, #0284c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Input focus style */
+.input-field {
+  @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-800 
+    placeholder:text-slate-400 outline-none transition-all duration-200
+    focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply w-full py-3.5 rounded-xl font-semibold text-white transition-all duration-200
+    bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400
+    shadow-md hover:shadow-lg hover:shadow-cyan-200 active:scale-[0.98];
+}
+
+.btn-outline {
+  @apply w-full py-3.5 rounded-xl font-semibold text-slate-700 border border-slate-200
+    bg-white hover:bg-slate-50 transition-all duration-200 active:scale-[0.98];
+}
+
+/* Mobile bottom nav */
+.bottom-nav {
+  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 
+    flex items-center justify-around px-4 py-2 z-50;
+}
+
+/* Specialty pill */
+.specialty-pill {
+  @apply px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer;
+}
+
+.specialty-pill.active {
+  @apply bg-cyan-500 text-white shadow-md shadow-cyan-200;
+}
+
+.specialty-pill.inactive {
+  @apply bg-white text-slate-600 border border-slate-200 hover:border-cyan-300 hover:text-cyan-600;
+}
